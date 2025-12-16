@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ysabeau Infant', sans-serif;
+    background-image: url('1389.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Верхняя красная панель */
+.header-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #8B0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Кнопка меню в правом верхнем углу */
+.menu-toggle {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 15;
+}
+
+.menu-toggle:hover {
+    color: #ffca47;
+}
+
+/* Боковая панель меню */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #8B0000, #4B0000);
+    z-index: 20;
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+/* Кнопка закрытия панели */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* в панели - логотип */
+.sidebar-logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.sidebar-title {
+    font-size: 2em;
+    color: #FFF;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #ffca47, 0 0 15px #ffca47;
+    margin-bottom: 10px;
+}
+
+.sidebar-subtitle {
+    font-size: 1em;
+    color: #ffca47;
+}
+
+/* Пункты меню */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 60px 0;
+}
+
+.menu-items li {
+    margin: 15px 0;
+}
+
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+    background: rgba(255, 20, 147, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu-items a:hover {
+    background: rgba(255, 20, 147, 0.3);
+    color: #ffca47;
+}
+
+/* Информация в панели (адрес и часы) */
+.sidebar-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: left;
+    font-size: 0.9em;
+    color: #DDD;
+}
+
+.sidebar-info .address,
+.sidebar-info .hours {
+    margin: 5px 0;
+}
+
+/* Затемнение фона для лучшей читаемости */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.main-container {
+    background: rgba(20, 20, 40, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.7), 0 0 60px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Неоновая надпись "КОЛОРИТНО" на главной */
+.neon-title {
+    font-size: 5em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ffca47,
+                 0 0 35px #ffca47, 0 0 40px #ffca47, 2px 0 0 #FFF;
+    animation: neonGlow 2s ease-in-out infinite alternate;
+    margin: 250px 0;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 
+                     0 0 20px #ffca47, 0 0 35px #ffca47, 0 0 40px #ffca47;
+    }
+    to {
+        text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 
+                     0 0 40px #ffca47, 0 0 60px #ffca47, 0 0 80px #ffca47;
+    }
+}
+
+/* Нижний текст на главной */
+.info-text {
+    font-size: 1.2em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.5;
+}
+
+.info-text .address {
+    font-size: 1em;
+}
+
+.info-text .hours {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Оверлей для закрытия панели при клике вне */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 19;
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}

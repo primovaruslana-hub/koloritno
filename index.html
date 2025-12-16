@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колоритно</title>
+    <!-- Подключение шрифта Ysabeau Infant -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400&display=swap" rel="stylesheet">
+    <!-- Подключение файла стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Оверлей для затемнения при открытой панели -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Боковая панель меню -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        <div class="sidebar-logo">
+            <img src="C:\Users\HUAWEI\Desktop\diplom\4.png" alt="Логотип бренда" class="sidebar-logo">
+        </div>
+        <ul class="menu-items">
+            <li><a href="#about">О ресторане</a></li>
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#info">Информация</a></li>
+        </ul>
+        <div class="sidebar-info">
+            <div class="address">Нефтеюганск, Усть-Балыкская ул., 6, ТЦ Рандеву</div>
+            <div class="hours">пн-вс: 10:00-22:00</div>
+        </div>
+    </div>
+
+    <!-- Верхняя красная панель с кнопкой меню -->
+    <div class="header-bar">
+        <div>
+            ВКУСНО ПО-ДОМАШНЕМУ
+        </div>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <h1 class="neon-title">КОЛОРИТНО</h1>
+
+    <div class="info-text">
+        <div class="address">Нефтеюганск, Усть-Балыкская ул., 6, ТЦ Рандеву</div>
+        <div class="hours">пн-вс: 10:00-22:00</div>
+    </div>
+
+    <!-- JavaScript для открытия/закрытия панели -->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        document.getElementById('overlay').addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>
